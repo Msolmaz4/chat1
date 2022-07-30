@@ -34,7 +34,8 @@ socket.on('join_room' ,(data)=>{
 
             
     socket.on('send_message',(data)=>{
-        console.log(data)
+        //to ile ilgili room gondeririy bu chat gelen receive meadage ussefeceten gelen
+        socket.to(data.room).emit('receive_message' , data)
     })
 
 //baglantiyi koparmak icinde bunu yazariy
